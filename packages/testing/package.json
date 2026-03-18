@@ -1,17 +1,19 @@
 {
     "name": "@mannercode/nestlib-testing",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "tsc -p tsconfig.build.json",
         "clean": "rm -rf dist *.tsbuildinfo",
         "lint": "eslint src/ --max-warnings=0"
     },
     "dependencies": {
-        "@mannercode/nestlib-common": "^0.0.1",
-        "@mannercode/nestlib-microservice": "^0.0.1",
+        "@mannercode/nestlib-common": "^1.0.0",
+        "@mannercode/nestlib-microservice": "^1.0.0",
         "lodash": "^4.17.23",
         "superagent": "^10.3.0"
     },
