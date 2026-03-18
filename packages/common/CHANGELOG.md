@@ -1,5 +1,11 @@
 # @mannercode/nestlib-common
 
+## 1.1.3
+
+### Patch Changes
+
+- 9d897b5: chore: add .ncurc.json and update dependencies
+
 ## 1.1.2
 
 ### Patch Changes

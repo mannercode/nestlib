@@ -1,5 +1,14 @@
 # @mannercode/nestlib-testing
 
+## 1.1.3
+
+### Patch Changes
+
+- 9d897b5: chore: add .ncurc.json and update dependencies
+- Updated dependencies [9d897b5]
+    - @mannercode/nestlib-common@1.1.3
+    - @mannercode/nestlib-microservice@1.1.3
+
 ## 1.1.2
 
 ### Patch Changes
