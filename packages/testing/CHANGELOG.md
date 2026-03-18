@@ -1,5 +1,14 @@
 # @mannercode/nestlib-testing
 
+## 1.1.2
+
+### Patch Changes
+
+- 752d371: chore: split tsconfig for intellisense, update tooling configs
+- Updated dependencies [752d371]
+    - @mannercode/nestlib-common@1.1.2
+    - @mannercode/nestlib-microservice@1.1.2
+
 ## 1.1.1
 
 ### Patch Changes
