@@ -1,4 +1,6 @@
 {
     "extends": "./tsconfig.json",
-    "exclude": ["src/**/*.spec.ts", "src/**/__tests__/**"]
+    "compilerOptions": { "composite": true },
+    "exclude": ["src/**/*.spec.ts", "src/**/__tests__/**"],
+    "references": [{ "path": "../common" }, { "path": "../microservice" }]
 }

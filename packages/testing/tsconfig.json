@@ -1,11 +1,5 @@
 {
     "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "outDir": "dist",
-        "rootDir": "src",
-        "composite": true,
-        "types": ["node", "jest"]
-    },
-    "include": ["src/**/*"],
-    "references": [{ "path": "../common" }, { "path": "../microservice" }]
+    "compilerOptions": { "outDir": "dist", "rootDir": "src", "types": ["node", "jest"] },
+    "include": ["src/**/*"]
 }
