@@ -1,9 +1,10 @@
+import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectModel, MongooseModule, Prop, Schema } from '@nestjs/mongoose'
-import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
-import { mapDocToDto, MongooseRepository } from '../mongoose.repository'
 import { Model } from 'mongoose'
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { MongooseRepository } from '../mongoose.repository'
+import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
+import { mapDocToDto } from '../mongoose.util'
 
 @Schema({ toJSON: { virtuals: true } })
 class Sample extends MongooseSchema {
@@ -17,7 +18,7 @@ export class SampleDto {
     name: string
 }
 
-export const maxTakeValue = 50
+export const maxLimitValue = 50
 
 export type MongooseRepositoryFixture = {
     BadRequestException: typeof BadRequestException
@@ -29,7 +30,7 @@ export type MongooseRepositoryFixture = {
 @Injectable()
 class SamplesRepository extends MongooseRepository<Sample> {
     constructor(@InjectModel(Sample.name) readonly model: Model<Sample>) {
-        super(model, maxTakeValue)
+        super(model, maxLimitValue)
     }
 }
 

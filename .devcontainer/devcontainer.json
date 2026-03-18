@@ -1,10 +1,9 @@
 {
     "name": "${containerWorkspaceFolderBasename}",
-    "hostRequirements": { "cpus": 2, "memory": "4gb", "storage": "16gb" },
     "build": { "dockerfile": "Dockerfile", "context": "." },
-    "runArgs": [
-        "--name=${localEnv:USER:unknown}-${localWorkspaceFolderBasename}"
-    ],
+    "features": { "ghcr.io/devcontainers/features/docker-in-docker:2": {} },
+    "privileged": true,
+    "runArgs": ["--name=${localEnv:USER:unknown}-${localWorkspaceFolderBasename}"],
     "remoteUser": "node",
     "mounts": [
         "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind",

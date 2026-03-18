@@ -15,6 +15,10 @@ export function getMongoTestConnection() {
     }
 }
 
+export function getTemporalTestConnection() {
+    return Env.getString('TESTLIB_TEMPORAL_ADDRESS')
+}
+
 export function getS3TestConnection() {
     const endpoint = Env.getString('TESTLIB_S3_ENDPOINT')
     const region = Env.getString('TESTLIB_S3_REGION')

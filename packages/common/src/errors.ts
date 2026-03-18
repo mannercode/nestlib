@@ -1,6 +1,7 @@
+import { JwtAuthErrors } from './jwt-auth'
+import { LatLongErrors } from './lat-long'
 import { MongooseErrors } from './mongoose'
-import { JwtAuthErrors } from './services'
-import { LatLongErrors, PaginationErrors } from './types'
+import { PaginationErrors } from './pagination'
 
 export const CommonErrors = {
     JwtAuth: JwtAuthErrors,

@@ -1,11 +1,11 @@
-import { pickIds } from '../../utils/functions'
-import { OrderDirection } from '../../types/pagination'
 import { expectEqualUnsorted, nullObjectId } from '@mannercode/nestlib-testing'
 import type { MongooseRepositoryFixture, SampleDto } from './mongoose.repository.fixture'
+import { OrderDirection } from '../../pagination/pagination'
+import { pickIds } from '../../utils/functions'
 import {
     createSample,
     createSamples,
-    maxTakeValue,
+    maxLimitValue,
     sortByName,
     sortByNameDescending,
     toDto,
@@ -76,15 +76,16 @@ describe('MongooseRepository', () => {
 
         // 올바른 페이지네이션으로 항목을 반환한다
         it('returns items with correct pagination', async () => {
-            const skip = 10
-            const take = 5
+            const page = 3
+            const limit = 5
             const { items, ...pagination } = await fix.repository.findWithPagination({
-                pagination: { orderby: { direction: OrderDirection.Asc, name: 'name' }, skip, take }
+                pagination: { limit, orderby: { direction: OrderDirection.Asc, name: 'name' }, page }
             })
 
             sortByName(samples)
-            expect(samples.slice(skip, skip + take)).toEqual(toDtos(items))
-            expect(pagination).toEqual({ skip, take, total: samples.length })
+            const skip = (page - 1) * limit
+            expect(samples.slice(skip, skip + limit)).toEqual(toDtos(items))
+            expect(pagination).toEqual({ limit, page, total: samples.length })
         })
 
         // 오름차순으로 정렬한다
@@ -92,7 +93,7 @@ describe('MongooseRepository', () => {
             const { items } = await fix.repository.findWithPagination({
                 pagination: {
                     orderby: { direction: OrderDirection.Asc, name: 'name' },
-                    take: samples.length
+                    limit: samples.length
                 }
             })
 
@@ -105,7 +106,7 @@ describe('MongooseRepository', () => {
             const { items } = await fix.repository.findWithPagination({
                 pagination: {
                     orderby: { direction: OrderDirection.Desc, name: 'name' },
-                    take: samples.length
+                    limit: samples.length
                 }
             })
 
@@ -113,31 +114,31 @@ describe('MongooseRepository', () => {
             expect(toDtos(items)).toEqual(samples)
         })
 
-        // take 값이 0 이하이면 예외를 던진다
-        it('throws for a non-positive take value', async () => {
-            const promise = fix.repository.findWithPagination({ pagination: { take: -1 } })
+        // limit 값이 0 이하이면 예외를 던진다
+        it('throws for a non-positive limit value', async () => {
+            const promise = fix.repository.findWithPagination({ pagination: { limit: -1 } })
 
             await expect(promise).rejects.toThrow(fix.BadRequestException)
         })
 
-        // limit을 초과한 take에 대해 BadRequestException을 던진다
-        it('throws BadRequestException for take above the limit', async () => {
-            const take = maxTakeValue + 1
+        // maxLimit을 초과한 limit에 대해 BadRequestException을 던진다
+        it('throws BadRequestException for limit above the max', async () => {
+            const limit = maxLimitValue + 1
 
-            const promise = fix.repository.findWithPagination({ pagination: { take } })
+            const promise = fix.repository.findWithPagination({ pagination: { limit } })
 
             await expect(promise).rejects.toThrow(fix.BadRequestException)
         })
 
-        // take가 제공되지 않을 때
-        describe('when take is not provided', () => {
-            // 기본 take 값을 사용한다
-            it('uses the default take value', async () => {
-                const { take } = await fix.repository.findWithPagination({
+        // limit가 제공되지 않을 때
+        describe('when limit is not provided', () => {
+            // 기본 limit 값을 사용한다
+            it('uses the default limit value', async () => {
+                const { limit } = await fix.repository.findWithPagination({
                     pagination: { orderby: { direction: OrderDirection.Desc, name: 'name' } }
                 })
 
-                expect(take).toEqual(maxTakeValue)
+                expect(limit).toEqual(maxLimitValue)
             })
         })
 
@@ -147,7 +148,7 @@ describe('MongooseRepository', () => {
                 configureQuery: async (queryHelper) => {
                     queryHelper.setQuery({ name: /Sample-00/i })
                 },
-                pagination: { take: 10 }
+                pagination: { limit: 10 }
             })
 
             const names = sortByName(toDtos(items)).map(({ name }) => name)

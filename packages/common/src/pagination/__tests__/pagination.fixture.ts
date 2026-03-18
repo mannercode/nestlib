@@ -1,12 +1,12 @@
+import { HttpTestClient } from '@mannercode/nestlib-testing'
+import { createHttpTestContext, getNatsTestConnection, RpcTestClient, withTestId } from '@mannercode/nestlib-testing'
 import { Controller, Get, Query, ValidationPipe } from '@nestjs/common'
 import { APP_PIPE } from '@nestjs/core'
 import { MicroserviceOptions, NatsOptions } from '@nestjs/microservices'
 import { MessagePattern, Payload, Transport } from '@nestjs/microservices'
-import { HttpTestClient } from '@mannercode/nestlib-testing'
-import { createHttpTestContext, getNatsTestConnection, RpcTestClient, withTestId } from '@mannercode/nestlib-testing'
 import { PaginationDto } from '..'
 
-export const maxTakeValue = 50
+export const maxLimitValue = 50
 
 export type PaginationFixture = {
     httpClient: HttpTestClient

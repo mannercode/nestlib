@@ -20,7 +20,15 @@ export default {
         '^@mannercode/nestlib-testing$': '<rootDir>/packages/testing/src/index'
     },
     collectCoverageFrom: ['<rootDir>/packages/*/src/**/*.ts'],
-    coveragePathIgnorePatterns: ['__tests__', '/index\\.ts$'],
+    coveragePathIgnorePatterns: ['__tests__', '/index\\.ts$', '/packages/testing/'],
     coverageDirectory: '<rootDir>/_output/coverage',
+    coverageThreshold: {
+        global: {
+            branches: 100,
+            functions: 100,
+            lines: 100,
+            statements: 100
+        }
+    },
     testTimeout: 60 * 1000
 }

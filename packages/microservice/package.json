@@ -23,13 +23,14 @@
         "rxjs": "^7.0.0"
     },
     "devDependencies": {
-        "@nestjs/common": "^11.1.14",
-        "@nestjs/microservices": "^11.1.14",
+        "@nestjs/common": "^11.1.17",
+        "@nestjs/microservices": "^11.1.17",
         "@temporalio/client": "^1.15.0",
         "@temporalio/worker": "^1.15.0",
         "@types/lodash": "^4.17.24",
         "@types/node": "^24",
         "reflect-metadata": "^0.2.2",
+        "nats": "^2.29.3",
         "rxjs": "^7.8.2",
         "typescript": "^5.9.3"
     },

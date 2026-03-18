@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common'
-import { InjectJwtAuth, JwtAuthModule, JwtAuthService } from '../jwt-auth.service'
-import { getRedisConnectionToken, RedisModule } from '../../redis'
-import Redis from 'ioredis'
 import { createTestContext, getRedisTestConnection, withTestId } from '@mannercode/nestlib-testing'
+import { Injectable } from '@nestjs/common'
+import Redis from 'ioredis'
+import { getRedisConnectionToken, RedisModule } from '../../redis'
+import { InjectJwtAuth, JwtAuthModule, JwtAuthService } from '../jwt-auth.service'
 
 export type JwtAuthServiceFixture = {
     jwtService: JwtAuthService

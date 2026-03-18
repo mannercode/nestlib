@@ -1,9 +1,9 @@
+import { withTestId } from '@mannercode/nestlib-testing'
 import { BadRequestException } from '@nestjs/common'
 import { plainToInstance } from 'class-transformer'
-import { CommonErrors } from '../../errors'
-import { withTestId } from '@mannercode/nestlib-testing'
 import type { PaginationFixture } from './pagination.fixture'
 import { PaginationDto, PaginationErrors } from '..'
+import { CommonErrors } from '../../errors'
 
 describe('PaginationDto', () => {
     let fix: PaginationFixture
@@ -17,17 +17,17 @@ describe('PaginationDto', () => {
     describe('HTTP controller', () => {
         // 요청이 유효할 때
         describe('when the request is valid', () => {
-            let skip: number
-            let take: number
+            let page: number
+            let limit: number
             let query: Record<string, any>
             let expectedResponse: Record<string, any>
 
             beforeEach(() => {
-                skip = 2
-                take = 3
-                query = { orderby: 'name:asc', skip, take }
+                page = 2
+                limit = 3
+                query = { limit, orderby: 'name:asc', page }
                 expectedResponse = {
-                    response: { orderby: { direction: 'asc', name: 'name' }, skip, take }
+                    response: { limit, orderby: { direction: 'asc', name: 'name' }, page }
                 }
             })
 
@@ -66,9 +66,9 @@ describe('PaginationDto', () => {
             let input: Record<string, any>
 
             beforeEach(() => {
-                const skip = 2
-                const take = 3
-                input = { orderby: { direction: 'asc', name: 'name' }, skip, take }
+                const page = 2
+                const limit = 3
+                input = { limit, orderby: { direction: 'asc', name: 'name' }, page }
             })
 
             // PaginationDto를 처리한다

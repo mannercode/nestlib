@@ -23,9 +23,10 @@
         "@nestjs/testing": "^11.0.0"
     },
     "devDependencies": {
-        "@nestjs/common": "^11.1.14",
-        "@nestjs/microservices": "^11.1.14",
-        "@nestjs/testing": "^11.1.14",
+        "@nestjs/common": "^11.1.17",
+        "@nestjs/microservices": "^11.1.17",
+        "@nestjs/platform-express": "^11.1.17",
+        "@nestjs/testing": "^11.1.17",
         "@types/jest": "^30.0.0",
         "@types/lodash": "^4.17.24",
         "@types/node": "^24",

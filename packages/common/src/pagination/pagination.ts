@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common'
 import { Transform } from 'class-transformer'
-import { IsEnum, IsInt, IsOptional, IsPositive, IsString, Min } from 'class-validator'
+import { IsEnum, IsInt, IsOptional, IsPositive, IsString } from 'class-validator'
 
 export const PaginationErrors = {
     DirectionInvalid: () => ({
@@ -69,24 +69,23 @@ export class PaginationDto {
     })
     orderby?: OrderBy
 
-    @IsInt()
     @IsOptional()
-    @Min(0)
-    skip?: number
+    @IsPositive()
+    page?: number
 
     @IsOptional()
     @IsPositive()
-    take?: number
+    limit?: number
 }
 
 export class PaginationResult<E> {
     items: E[]
 
     @IsInt()
-    skip: number
+    page: number
 
     @IsInt()
-    take: number
+    limit: number
 
     @IsInt()
     total: number

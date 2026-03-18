@@ -27,6 +27,7 @@ export class RedisModule {
 }
 
 function createRedisClient(options: RedisModuleOptions): RedisConnection {
+    /* istanbul ignore next -- cluster requires a real Redis Cluster */
     if (options.type === 'cluster') {
         return new Cluster(options.nodes, options.options)
     }
@@ -39,11 +40,8 @@ function createRedisClient(options: RedisModuleOptions): RedisConnection {
         return new Redis(options.url)
     }
 
-    if (options.options) {
-        return new Redis(options.options)
-    }
-
-    return new Redis()
+    /* istanbul ignore next -- default connects to localhost:6379 */
+    return options.options ? new Redis(options.options) : new Redis()
 }
 
 function createRedisProvider(options: RedisModuleOptions, connectionName?: string): Provider {

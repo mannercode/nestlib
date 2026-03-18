@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common'
-import { CacheModule, CacheService, InjectCache } from '../cache.service'
-import { getRedisConnectionToken, RedisModule } from '../../redis'
 import { createTestContext, getRedisTestConnection, withTestId } from '@mannercode/nestlib-testing'
+import { Injectable } from '@nestjs/common'
+import { getRedisConnectionToken, RedisModule } from '../../redis'
+import { CacheModule, CacheService, InjectCache } from '../cache.service'
 
 export type CacheServiceFixture = { cacheService: CacheService; teardown: () => Promise<void> }
 

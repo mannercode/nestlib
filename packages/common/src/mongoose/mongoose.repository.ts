@@ -2,7 +2,7 @@ import type { OnModuleInit } from '@nestjs/common'
 import type { ClientSession, HydratedDocument, Model, ObjectId, QueryWithHelpers } from 'mongoose'
 import { BadRequestException, NotFoundException } from '@nestjs/common'
 import { defaultTo, differenceWith, uniq } from 'lodash'
-import type { PaginationDto, PaginationResult } from '../types'
+import type { PaginationDto, PaginationResult } from '../pagination'
 import { Require, Verify } from '../validator'
 import { MongooseErrors } from './errors'
 import { objectId, objectIds } from './mongoose.util'
@@ -15,7 +15,7 @@ const defaultLeanOptions = { virtuals: true }
 export abstract class MongooseRepository<Doc> implements OnModuleInit {
     constructor(
         protected readonly model: Model<Doc>,
-        protected readonly maxTake: number
+        protected readonly maxLimit: number
     ) {}
 
     async deleteById(id: string, session: SessionArg = undefined) {
@@ -66,17 +66,19 @@ export abstract class MongooseRepository<Doc> implements OnModuleInit {
     }) {
         const { configureQuery, pagination, session } = args
 
-        let take = defaultTo(pagination.take, this.maxTake)
-        let skip = defaultTo(pagination.skip, 0)
+        const limit = defaultTo(pagination.limit, this.maxLimit)
+        const page = defaultTo(pagination.page, 1)
 
-        if (take <= 0) {
-            throw new BadRequestException(MongooseErrors.TakeInvalid(take))
-        } else if (this.maxTake < take) {
-            throw new BadRequestException(MongooseErrors.MaxTakeExceeded(this.maxTake, take))
+        if (limit <= 0) {
+            throw new BadRequestException(MongooseErrors.LimitInvalid(limit))
+        } else if (this.maxLimit < limit) {
+            throw new BadRequestException(MongooseErrors.MaxLimitExceeded(this.maxLimit, limit))
         }
 
+        const skip = (page - 1) * limit
+
         const queryHelper = this.model.find({}, null, { session })
-        queryHelper.limit(take)
+        queryHelper.limit(limit)
         queryHelper.skip(skip)
 
         if (pagination.orderby) {
@@ -95,7 +97,7 @@ export abstract class MongooseRepository<Doc> implements OnModuleInit {
             this.model.countDocuments(queryHelper.getQuery()).exec()
         ])
 
-        return { items, skip, take, total } as PaginationResult<Doc>
+        return { items, limit, page, total } as PaginationResult<Doc>
     }
 
     async getById(id: string, session: SessionArg = undefined) {
