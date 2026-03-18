@@ -1,6 +1,6 @@
 import { createJsWithTsPreset } from 'ts-jest'
 
-const tsJestPreset = createJsWithTsPreset({ tsconfig: 'tsconfig.test.json' })
+const tsJestPreset = createJsWithTsPreset({ tsconfig: 'tsconfig.json' })
 
 export default {
     ...tsJestPreset,
