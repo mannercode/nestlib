@@ -1,0 +1,27 @@
+{
+    "name": "@mannercode/nestlib-temporal",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["dist"],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist *.tsbuildinfo"
+    },
+    "peerDependencies": {
+        "@nestjs/common": "^11.0.0",
+        "@temporalio/client": "^1.15.0",
+        "@temporalio/worker": "^1.15.0"
+    },
+    "devDependencies": {
+        "@nestjs/common": "^11.1.14",
+        "@temporalio/client": "^1.15.0",
+        "@temporalio/worker": "^1.15.0",
+        "@types/node": "^24",
+        "reflect-metadata": "^0.2.2",
+        "typescript": "^5.9.3"
+    },
+    "publishConfig": { "access": "public" },
+    "license": "MIT",
+    "repository": { "type": "git", "url": "https://github.com/mannercode/nestlib.git", "directory": "packages/temporal" }
+}

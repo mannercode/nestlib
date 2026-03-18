@@ -1,0 +1,32 @@
+{
+    "name": "@mannercode/nestlib-nats",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["dist"],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist *.tsbuildinfo"
+    },
+    "dependencies": {
+        "@mannercode/nestlib-core": "^0.0.1",
+        "lodash": "^4.17.23"
+    },
+    "peerDependencies": {
+        "@nestjs/common": "^11.0.0",
+        "@nestjs/microservices": "^11.0.0",
+        "rxjs": "^7.0.0"
+    },
+    "devDependencies": {
+        "@nestjs/common": "^11.1.14",
+        "@nestjs/microservices": "^11.1.14",
+        "@types/lodash": "^4.17.24",
+        "@types/node": "^24",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.2",
+        "typescript": "^5.9.3"
+    },
+    "publishConfig": { "access": "public" },
+    "license": "MIT",
+    "repository": { "type": "git", "url": "https://github.com/mannercode/nestlib.git", "directory": "packages/nats" }
+}
