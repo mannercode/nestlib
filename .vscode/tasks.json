@@ -2,16 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "test",
+            "label": "1) test",
             "type": "shell",
             "command": "npm test",
             "group": { "kind": "test", "isDefault": true },
             "problemMatcher": []
         },
         {
-            "label": "lint",
+            "label": "2) format",
             "type": "shell",
-            "command": "npm run lint",
+            "command": "npm run lint && npm run format",
             "problemMatcher": ["$eslint-stylish"]
         }
     ]
