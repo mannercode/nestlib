@@ -3,7 +3,7 @@ const perfectionistPlugin = require('eslint-plugin-perfectionist')
 const globals = require('globals')
 const unusedImportsPlugin = require('eslint-plugin-unused-imports')
 
-const baseGlobals = { ...globals.node, ...globals.es2021, module: 'readonly', require: 'readonly' }
+const baseGlobals = { ...globals.node, ...globals.es2025, module: 'readonly', require: 'readonly' }
 
 module.exports = [
     {

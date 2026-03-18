@@ -3,7 +3,9 @@
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": "src",
+        "composite": true,
         "types": ["node", "jest"]
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "references": [{ "path": "../common" }, { "path": "../microservice" }]
 }

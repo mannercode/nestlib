@@ -1,5 +1,11 @@
 # @mannercode/nestlib-common
 
+## 1.1.1
+
+### Patch Changes
+
+- refactor: add TypeScript project references, update configs and formatting
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @mannercode/nestlib-testing
 
+## 1.1.1
+
+### Patch Changes
+
+- refactor: add TypeScript project references, update configs and formatting
+- Updated dependencies
+    - @mannercode/nestlib-common@1.1.1
+    - @mannercode/nestlib-microservice@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

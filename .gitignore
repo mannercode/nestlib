@@ -3,3 +3,6 @@ dist
 .turbo
 *.tsbuildinfo
 _output
+
+.DS_Store
+desktop.ini

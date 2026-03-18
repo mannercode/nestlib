@@ -1,3 +1,4 @@
-dist/
+_output/
 node_modules/
 .turbo/
+dist/

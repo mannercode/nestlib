@@ -1,12 +1,9 @@
-import { MongoDBContainer } from '@testcontainers/mongodb'
-import { NatsContainer } from '@testcontainers/nats'
 import { Connection } from '@temporalio/client'
 import { TestWorkflowEnvironment } from '@temporalio/testing'
-import fs from 'fs'
+import { MongoDBContainer } from '@testcontainers/mongodb'
+import { NatsContainer } from '@testcontainers/nats'
 import { GenericContainer } from 'testcontainers'
 import { getEnv, setEnv } from './jest.utils'
-
-// process.env.DEBUG="ioredis:*"
 
 async function setupNats() {
     return new NatsContainer(getEnv('NATS_IMAGE'))
@@ -33,13 +30,7 @@ async function setupMongo() {
         .withResourcesQuota({ memory: 1 }) // 1GB
         .withSharedMemorySize(8 * 1024 * 1024)
         .withReuse()
-        .withCommand([
-            '--replSet',
-            'rs0',
-            '--bind_ip_all',
-            '--wiredTigerCacheSizeGB',
-            '0.25'
-        ])
+        .withCommand(['--replSet', 'rs0', '--bind_ip_all', '--wiredTigerCacheSizeGB', '0.25'])
         .start()
 }
 
@@ -66,9 +57,6 @@ async function setupTemporal() {
 }
 
 export default async function globalSetup() {
-    const dirPath = getEnv('LOG_DIRECTORY')
-    fs.mkdirSync(dirPath, { recursive: true })
-
     const [nats, mongo, redis, minio, temporal] = await Promise.all([
         setupNats(),
         setupMongo(),
@@ -82,8 +70,5 @@ export default async function globalSetup() {
     setEnv('TESTLIB_MONGO_URI', `${mongo.getConnectionString()}?directConnection=true`)
     setEnv('TESTLIB_REDIS_URL', `redis://${redis.getHost()}:${redis.getMappedPort(6379)}`)
     setEnv('TESTLIB_S3_ENDPOINT', `http://${minio.getHost()}:${minio.getMappedPort(9000)}`)
-    setEnv(
-        'TESTLIB_TEMPORAL_ADDRESS',
-        (temporal.client.connection as Connection).options.address
-    )
+    setEnv('TESTLIB_TEMPORAL_ADDRESS', (temporal.client.connection as Connection).options.address)
 }
