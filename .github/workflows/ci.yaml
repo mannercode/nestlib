@@ -28,4 +28,5 @@ jobs:
                       set -Eeuo pipefail
 
                       npm run lint
+                      npm run build
                       npm test
