@@ -1,5 +1,5 @@
 ---
-'@mannercode/nestlib': minor
+'@mannercode/nestlib-common': minor
 '@mannercode/nestlib-microservice': minor
 '@mannercode/nestlib-testing': minor
 ---
