@@ -15,7 +15,7 @@
         "changeset:publish": "turbo run build && changeset publish"
     },
     "devDependencies": {
-        "@aws-sdk/client-s3": "^3.1011.0",
+        "@aws-sdk/client-s3": "^3.1012.0",
         "@changesets/cli": "^2.30.0",
         "@commitlint/cli": "^20.5.0",
         "@commitlint/config-conventional": "^20.5.0",
@@ -39,7 +39,7 @@
         "reflect-metadata": "^0.2.2",
         "testcontainers": "^11.13.0",
         "ts-jest": "^29.4.6",
-        "turbo": "^2.8.17",
+        "turbo": "^2.8.18",
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.57.1"
     },
