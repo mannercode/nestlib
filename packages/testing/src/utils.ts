@@ -1,4 +1,4 @@
-import { Env } from '@mannercode/nestlib-core'
+import { Env } from '@mannercode/nestlib-common'
 import fs from 'fs/promises'
 import inspector from 'node:inspector'
 

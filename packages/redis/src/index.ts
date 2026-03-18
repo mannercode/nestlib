@@ -1,5 +1,0 @@
-export * from './redis.module'
-export * from './redis.tokens'
-export * from './redis.types'
-export * from './redis.health-indicator'
-export * from './cache.service'

@@ -1,0 +1,49 @@
+{
+    "name": "${containerWorkspaceFolderBasename}",
+    "hostRequirements": { "cpus": 2, "memory": "4gb", "storage": "16gb" },
+    "build": { "dockerfile": "Dockerfile", "context": "." },
+    "runArgs": [
+        "--name=${localEnv:USER:unknown}-${localWorkspaceFolderBasename}"
+    ],
+    "remoteUser": "node",
+    "mounts": [
+        "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind",
+        "source=${localEnv:HOME}/.claude.json,target=/home/node/.claude.json,type=bind"
+    ],
+    "initializeCommand": {
+        "prepare-mounts": "mkdir -p ${localEnv:HOME}/.claude",
+        "prepare-files": "touch ${localEnv:HOME}/.claude.json"
+    },
+    "postCreateCommand": { "husky": "husky", "ci": "npm ci" },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-containers",
+                "github.vscode-pull-request-github",
+                "anthropic.claude-code"
+            ],
+            "settings": {
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/**": true
+                },
+                "search.exclude": { "**/node_modules/**": true, "**/dist/**": true },
+                "files.exclude": { "**/node_modules/**": true },
+                "remote.autoForwardPorts": false,
+                "remote.downloadExtensionsLocally": true,
+                "js/ts.tsc.autoDetect": "off",
+                "js/ts.disableAutomaticTypeAcquisition": true,
+                "js/ts.format.enable": false,
+                "js/ts.validate.enable": false,
+                "js/ts.updateImportsOnFileMove.enabled": "never",
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+                "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+                "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+            }
+        }
+    }
+}
