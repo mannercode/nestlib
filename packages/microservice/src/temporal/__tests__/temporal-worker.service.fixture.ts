@@ -1,5 +1,5 @@
 import { createTestContext, getTemporalTestConnection } from '@mannercode/nestlib-testing'
-import type { TemporalWorkerOptions } from '../temporal-worker.service';
+import type { TemporalWorkerOptions } from '../temporal-worker.service'
 import { TemporalWorkerService } from '../temporal-worker.service'
 
 export type TemporalWorkerServiceFixture = {
@@ -15,9 +15,7 @@ export async function createTemporalWorkerServiceFixture() {
         namespace: 'default',
         taskQueue: `test-queue-${Date.now()}`,
         workflowsPath: require.resolve('./temporal-worker.workflows'),
-        activities: {
-            greet: async (name: string) => `Hello, ${name}!`
-        }
+        activities: { greet: async (name: string) => `Hello, ${name}!` }
     }
 
     const { close, module } = await createTestContext({

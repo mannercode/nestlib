@@ -1,4 +1,9 @@
-import { createTestContext, getNatsTestConnection, RpcTestClient, withTestId } from '@mannercode/nestlib-testing'
+import {
+    createTestContext,
+    getNatsTestConnection,
+    RpcTestClient,
+    withTestId
+} from '@mannercode/nestlib-testing'
 import { Controller } from '@nestjs/common'
 import { NatsOptions } from '@nestjs/microservices'
 import { MessagePattern, Transport } from '@nestjs/microservices'

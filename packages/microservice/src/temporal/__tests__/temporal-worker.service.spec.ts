@@ -4,9 +4,8 @@ describe('TemporalWorkerService', () => {
     let fix: TemporalWorkerServiceFixture
 
     beforeEach(async () => {
-        const { createTemporalWorkerServiceFixture } = await import(
-            './temporal-worker.service.fixture'
-        )
+        const { createTemporalWorkerServiceFixture } =
+            await import('./temporal-worker.service.fixture')
         fix = await createTemporalWorkerServiceFixture()
     })
     afterEach(() => fix.teardown())

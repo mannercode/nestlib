@@ -1,6 +1,8 @@
-import { createJsWithTsPreset } from 'ts-jest'
+import { createJsWithTsPreset, pathsToModuleNameMapper } from 'ts-jest'
+import tsconfig from './tsconfig.json' with { type: 'json' }
 
 const tsJestPreset = createJsWithTsPreset({ tsconfig: 'tsconfig.json' })
+const { compilerOptions } = tsconfig
 
 export default {
     ...tsJestPreset,
@@ -14,11 +16,8 @@ export default {
     restoreMocks: true,
     rootDir: '.',
     roots: ['<rootDir>/packages'],
-    moduleNameMapper: {
-        '^@mannercode/nestlib-common$': '<rootDir>/packages/common/src/index',
-        '^@mannercode/nestlib-microservice$': '<rootDir>/packages/microservice/src/index',
-        '^@mannercode/nestlib-testing$': '<rootDir>/packages/testing/src/index'
-    },
+    moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
+    modulePaths: [compilerOptions.baseUrl],
     collectCoverageFrom: ['<rootDir>/packages/*/src/**/*.ts'],
     coveragePathIgnorePatterns: ['__tests__', '/index\\.ts$', '/packages/testing/'],
     coverageDirectory: '<rootDir>/_output/coverage',

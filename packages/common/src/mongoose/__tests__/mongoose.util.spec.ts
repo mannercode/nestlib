@@ -2,7 +2,14 @@ import { BadRequestException, Logger } from '@nestjs/common'
 import { Prop, Schema } from '@nestjs/mongoose'
 import { model, Types } from 'mongoose'
 import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
-import { assignIfDefined, mapDocToDto, newObjectIdString, objectId, objectIds, QueryBuilder } from '../mongoose.util'
+import {
+    assignIfDefined,
+    mapDocToDto,
+    newObjectIdString,
+    objectId,
+    objectIds,
+    QueryBuilder
+} from '../mongoose.util'
 
 it('newObjectIdString', async () => {
     const objectIdValue = newObjectIdString()

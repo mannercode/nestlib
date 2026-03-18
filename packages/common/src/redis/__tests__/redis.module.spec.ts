@@ -35,9 +35,8 @@ describe('RedisModule', () => {
         // URL과 옵션을 함께 제공한다
         describe('with url and options', () => {
             beforeEach(async () => {
-                const { createRedisModuleUrlWithOptionsFixture } = await import(
-                    './redis.module.fixture'
-                )
+                const { createRedisModuleUrlWithOptionsFixture } =
+                    await import('./redis.module.fixture')
                 fix = await createRedisModuleUrlWithOptionsFixture()
             })
             afterEach(() => fix.teardown())
@@ -51,9 +50,8 @@ describe('RedisModule', () => {
         // 옵션만 제공한다
         describe('with options only', () => {
             beforeEach(async () => {
-                const { createRedisModuleOptionsOnlyFixture } = await import(
-                    './redis.module.fixture'
-                )
+                const { createRedisModuleOptionsOnlyFixture } =
+                    await import('./redis.module.fixture')
                 fix = await createRedisModuleOptionsOnlyFixture()
             })
             afterEach(() => fix.teardown())

@@ -7,5 +7,6 @@
             "@mannercode/nestlib-microservice": ["packages/microservice/src"],
             "@mannercode/nestlib-testing": ["packages/testing/src"]
         }
-    }
+    },
+    "include": ["packages/**/*"]
 }

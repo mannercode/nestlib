@@ -4,9 +4,8 @@ describe('TemporalClientModule', () => {
     let fix: TemporalClientModuleFixture
 
     beforeEach(async () => {
-        const { createTemporalClientModuleFixture } = await import(
-            './temporal-client.module.fixture'
-        )
+        const { createTemporalClientModuleFixture } =
+            await import('./temporal-client.module.fixture')
         fix = await createTemporalClientModuleFixture()
     })
     afterEach(() => fix.teardown())

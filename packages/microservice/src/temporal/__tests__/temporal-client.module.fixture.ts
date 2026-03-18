@@ -18,10 +18,7 @@ export async function createTemporalClientModuleFixture() {
     const { close, module } = await createTestContext({
         imports: [
             TemporalClientModule.registerAsync({
-                useFactory: () => ({
-                    address: getTemporalTestConnection(),
-                    namespace: 'default'
-                })
+                useFactory: () => ({ address: getTemporalTestConnection(), namespace: 'default' })
             })
         ],
         providers: [TestTemporalConsumer]
