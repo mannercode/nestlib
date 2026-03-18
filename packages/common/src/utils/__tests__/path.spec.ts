@@ -1,7 +1,7 @@
-import { Path } from '../path'
 import fs from 'fs/promises'
 import os from 'os'
 import p from 'path'
+import { Path } from '../path'
 
 describe('Path', () => {
     // 절대 경로를 반환한다

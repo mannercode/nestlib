@@ -1,6 +1,6 @@
 import type { NatsOptions } from '@nestjs/microservices'
-import { ClientProxyFactory } from '@nestjs/microservices'
 import { ClientProxyService } from '@mannercode/nestlib-microservice'
+import { ClientProxyFactory } from '@nestjs/microservices'
 
 export class RpcTestClient extends ClientProxyService {
     static create(options: NatsOptions) {

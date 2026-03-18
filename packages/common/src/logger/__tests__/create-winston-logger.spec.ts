@@ -1,9 +1,9 @@
 import type winston from 'winston'
-import { createWinstonLogger } from '../create-winston-logger'
-import { Path } from '../../utils/path'
-import { sleep } from '../../utils/functions'
-import { readFile } from 'fs/promises'
 import { isDebuggingEnabled } from '@mannercode/nestlib-testing'
+import { readFile } from 'fs/promises'
+import { sleep } from '../../utils/functions'
+import { Path } from '../../utils/path'
+import { createWinstonLogger } from '../create-winston-logger'
 
 describe('createWinstonLogger', () => {
     let logger: winston.Logger

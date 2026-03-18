@@ -1,5 +1,5 @@
-import { HttpStatus } from '@nestjs/common'
 import { withTestId } from '@mannercode/nestlib-testing'
+import { HttpStatus } from '@nestjs/common'
 import type { ExceptionLoggerFilterFixture } from './exception-logger.filter.fixture'
 
 describe('ExceptionLoggerFilter', () => {

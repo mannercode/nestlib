@@ -1,6 +1,6 @@
-import { SuccessLoggerInterceptor } from '../success-logger.interceptor'
 import { withTestId } from '@mannercode/nestlib-testing'
 import type { SuccessLoggerInterceptorFixture } from './success-logger.interceptor.fixture'
+import { SuccessLoggerInterceptor } from '../success-logger.interceptor'
 
 describe('SuccessLoggerInterceptor', () => {
     let fix: SuccessLoggerInterceptorFixture

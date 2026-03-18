@@ -1,5 +1,5 @@
-import { Json } from '../json'
 import { nullDate } from '@mannercode/nestlib-testing'
+import { Json } from '../json'
 
 describe('Json', () => {
     describe('quoteIntegers', () => {

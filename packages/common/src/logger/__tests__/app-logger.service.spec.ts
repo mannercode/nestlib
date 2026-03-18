@@ -1,5 +1,5 @@
-import { AppLoggerService } from '../app-logger.service'
 import winston from 'winston'
+import { AppLoggerService } from '../app-logger.service'
 
 describe('AppLoggerService', () => {
     let appLoggerService: AppLoggerService

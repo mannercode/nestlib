@@ -1,8 +1,8 @@
+import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
 import { getModelToken, MongooseModule, Schema as NestSchema, Prop } from '@nestjs/mongoose'
-import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
 import { Model, Types } from 'mongoose'
 import { mongo, Schema } from 'mongoose'
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
 
 export type MongooseSchemaFixture = {
     model: Model<SchemaTypeSample>

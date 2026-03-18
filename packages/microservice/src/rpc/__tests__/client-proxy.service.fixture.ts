@@ -1,13 +1,13 @@
+import { HttpTestClient } from '@mannercode/nestlib-testing'
+import { createHttpTestContext, getNatsTestConnection, RpcTestClient, withTestId } from '@mannercode/nestlib-testing'
 import { MessageEvent } from '@nestjs/common'
 import { Controller, Get, Sse } from '@nestjs/common'
 import { NatsOptions } from '@nestjs/microservices'
 import { EventPattern, MessagePattern, Transport } from '@nestjs/microservices'
-import { ClientProxyService } from '../client-proxy.service'
-import { ClientProxyModule, InjectClientProxy } from '../client-proxy.service'
 import { Observable } from 'rxjs'
 import { ReplaySubject } from 'rxjs'
-import { HttpTestClient } from '@mannercode/nestlib-testing'
-import { createHttpTestContext, getNatsTestConnection, RpcTestClient, withTestId } from '@mannercode/nestlib-testing'
+import { ClientProxyService } from '../client-proxy.service'
+import { ClientProxyModule, InjectClientProxy } from '../client-proxy.service'
 
 export type ClientProxyServiceFixture = {
     httpClient: HttpTestClient

@@ -1,9 +1,9 @@
+import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
 import { Injectable } from '@nestjs/common'
 import { getModelToken, InjectModel, MongooseModule, Prop, Schema } from '@nestjs/mongoose'
-import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
-import { MongooseRepository } from '../mongoose.repository'
 import { Model } from 'mongoose'
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { MongooseRepository } from '../mongoose.repository'
+import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'
 
 @Schema()
 class Sample extends MongooseSchema {

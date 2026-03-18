@@ -1,8 +1,8 @@
+import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
 import { Type } from '@nestjs/common'
 import { getModelToken, MongooseModule, Prop, Schema } from '@nestjs/mongoose'
-import { createMongooseSchema, HardDelete, MongooseSchema } from '../mongoose.schema'
 import { Model } from 'mongoose'
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { createMongooseSchema, HardDelete, MongooseSchema } from '../mongoose.schema'
 
 @HardDelete()
 @Schema()
