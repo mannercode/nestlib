@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@mannercode/nestlib-common": ["packages/common/src"],
+            "@mannercode/nestlib-microservice": ["packages/microservice/src"],
+            "@mannercode/nestlib-testing": ["packages/testing/src"]
+        }
+    }
+}
