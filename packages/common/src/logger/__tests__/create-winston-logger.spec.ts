@@ -1,5 +1,5 @@
 import type winston from 'winston'
-import { isDebuggingEnabled } from '@mannercode/nestlib-testing'
+import { isDebuggingEnabled } from '@mannercode/nest-testing'
 import { readFile } from 'fs/promises'
 import { sleep } from '../../utils/functions'
 import { Path } from '../../utils/path'

@@ -1,5 +1,5 @@
-import { HttpTestClient } from '@mannercode/nestlib-testing'
-import { createHttpTestContext } from '@mannercode/nestlib-testing'
+import { HttpTestClient } from '@mannercode/nest-testing'
+import { createHttpTestContext } from '@mannercode/nest-testing'
 import { Controller, Get } from '@nestjs/common'
 import { LatLong } from '../lat-long'
 import { ParseLatLongQuery } from '../lat-long'

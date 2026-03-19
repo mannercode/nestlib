@@ -1,4 +1,4 @@
-import { createTestContext, getTemporalTestConnection } from '@mannercode/nestlib-testing'
+import { createTestContext, getTemporalTestConnection } from '@mannercode/nest-testing'
 import type { TemporalWorkerOptions } from '../temporal-worker.service'
 import { TemporalWorkerService } from '../temporal-worker.service'
 

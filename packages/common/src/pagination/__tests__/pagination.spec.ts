@@ -1,4 +1,4 @@
-import { withTestId } from '@mannercode/nestlib-testing'
+import { withTestId } from '@mannercode/nest-testing'
 import { BadRequestException } from '@nestjs/common'
 import { plainToInstance } from 'class-transformer'
 import type { PaginationFixture } from './pagination.fixture'

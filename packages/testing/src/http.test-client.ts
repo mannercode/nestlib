@@ -1,4 +1,4 @@
-import { Byte, Json } from '@mannercode/nestlib-common'
+import { Byte, Json } from '@mannercode/nest-common'
 import { HttpStatus } from '@nestjs/common'
 import { createWriteStream } from 'fs'
 import superagent from 'superagent'

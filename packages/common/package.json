@@ -1,5 +1,5 @@
 {
-    "name": "@mannercode/nestlib-common",
+    "name": "@mannercode/nest-common",
     "version": "1.2.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -64,7 +64,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/mannercode/nestlib.git",
+        "url": "https://github.com/mannercode/nest-libs.git",
         "directory": "packages/common"
     }
 }

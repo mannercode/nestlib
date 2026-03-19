@@ -1,10 +1,10 @@
-import { HttpTestClient } from '@mannercode/nestlib-testing'
+import { HttpTestClient } from '@mannercode/nest-testing'
 import {
     createHttpTestContext,
     getNatsTestConnection,
     RpcTestClient,
     withTestId
-} from '@mannercode/nestlib-testing'
+} from '@mannercode/nest-testing'
 import { Controller, Get, Query, ValidationPipe } from '@nestjs/common'
 import { APP_PIPE } from '@nestjs/core'
 import { MicroserviceOptions, NatsOptions } from '@nestjs/microservices'

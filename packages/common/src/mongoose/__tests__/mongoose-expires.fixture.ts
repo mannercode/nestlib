@@ -1,4 +1,4 @@
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { createTestContext, getMongoTestConnection } from '@mannercode/nest-testing'
 import { getModelToken, MongooseModule, Schema as NestSchema, Prop } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 import { createMongooseSchema, MongooseSchema } from '../mongoose.schema'

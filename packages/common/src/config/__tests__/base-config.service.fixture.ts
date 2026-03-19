@@ -1,4 +1,4 @@
-import { createTestContext } from '@mannercode/nestlib-testing'
+import { createTestContext } from '@mannercode/nest-testing'
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { ConfigModule } from '@nestjs/config'

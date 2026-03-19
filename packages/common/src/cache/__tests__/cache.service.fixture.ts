@@ -1,4 +1,4 @@
-import { createTestContext, getRedisTestConnection, withTestId } from '@mannercode/nestlib-testing'
+import { createTestContext, getRedisTestConnection, withTestId } from '@mannercode/nest-testing'
 import { Injectable } from '@nestjs/common'
 import { getRedisConnectionToken, RedisModule } from '../../redis'
 import { CacheModule, CacheService, InjectCache } from '../cache.service'

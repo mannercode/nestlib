@@ -1,4 +1,4 @@
-# @mannercode/nestlib-common
+# @mannercode/nest-common
 
 ## 1.2.0
 

@@ -1,4 +1,4 @@
-import { Byte, Path } from '@mannercode/nestlib-common'
+import { Byte, Path } from '@mannercode/nest-common'
 import fs from 'fs/promises'
 import { createDummyFile } from '../utils'
 

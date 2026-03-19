@@ -3,7 +3,7 @@ import {
     getNatsTestConnection,
     RpcTestClient,
     withTestId
-} from '@mannercode/nestlib-testing'
+} from '@mannercode/nest-testing'
 import { Controller } from '@nestjs/common'
 import { NatsOptions } from '@nestjs/microservices'
 import { MessagePattern, Transport } from '@nestjs/microservices'

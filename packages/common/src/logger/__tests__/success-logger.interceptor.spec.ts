@@ -1,4 +1,4 @@
-import { withTestId } from '@mannercode/nestlib-testing'
+import { withTestId } from '@mannercode/nest-testing'
 import type { SuccessLoggerInterceptorFixture } from './success-logger.interceptor.fixture'
 import { SuccessLoggerInterceptor } from '../success-logger.interceptor'
 

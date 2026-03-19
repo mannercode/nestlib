@@ -1,4 +1,4 @@
-import { Env } from '@mannercode/nestlib-common'
+import { Env } from '@mannercode/nest-common'
 
 export function getRedisTestConnection() {
     return Env.getString('TESTLIB_REDIS_URL')

@@ -1,4 +1,4 @@
-import { expectEqualUnsorted, nullObjectId } from '@mannercode/nestlib-testing'
+import { expectEqualUnsorted, nullObjectId } from '@mannercode/nest-testing'
 import type { MongooseRepositoryFixture, SampleDto } from './mongoose.repository.fixture'
 import { OrderDirection } from '../../pagination/pagination'
 import { pickIds } from '../../utils/functions'
@@ -79,11 +79,7 @@ describe('MongooseRepository', () => {
             const page = 3
             const size = 5
             const { items, ...pagination } = await fix.repository.findWithPagination({
-                pagination: {
-                    size,
-                    orderby: { direction: OrderDirection.Asc, name: 'name' },
-                    page
-                }
+                pagination: { size, orderby: { direction: OrderDirection.Asc, name: 'name' }, page }
             })
 
             sortByName(samples)

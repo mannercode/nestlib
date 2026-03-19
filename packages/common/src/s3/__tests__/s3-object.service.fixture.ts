@@ -1,4 +1,4 @@
-import { createTestContext, getS3TestConnection } from '@mannercode/nestlib-testing'
+import { createTestContext, getS3TestConnection } from '@mannercode/nest-testing'
 import { Injectable } from '@nestjs/common'
 import { InjectS3Object, S3ObjectModule, S3ObjectService } from '..'
 

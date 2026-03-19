@@ -1,5 +1,5 @@
 {
-    "name": "@mannercode/nestlib-testing",
+    "name": "@mannercode/nest-testing",
     "version": "1.1.3",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -12,8 +12,8 @@
         "lint": "eslint src/ --max-warnings=0"
     },
     "dependencies": {
-        "@mannercode/nestlib-common": "^1.1.3",
-        "@mannercode/nestlib-microservice": "^1.1.3",
+        "@mannercode/nest-common": "^1.1.3",
+        "@mannercode/nest-microservice": "^1.1.3",
         "lodash": "^4.17.23",
         "superagent": "^10.3.0"
     },
@@ -40,7 +40,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/mannercode/nestlib.git",
+        "url": "https://github.com/mannercode/nest-libs.git",
         "directory": "packages/testing"
     }
 }

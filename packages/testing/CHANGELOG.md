@@ -1,4 +1,4 @@
-# @mannercode/nestlib-testing
+# @mannercode/nest-testing
 
 ## 1.1.3
 
@@ -6,8 +6,8 @@
 
 - 9d897b5: chore: add .ncurc.json and update dependencies
 - Updated dependencies [9d897b5]
-    - @mannercode/nestlib-common@1.1.3
-    - @mannercode/nestlib-microservice@1.1.3
+    - @mannercode/nest-common@1.1.3
+    - @mannercode/nest-microservice@1.1.3
 
 ## 1.1.2
 
@@ -15,8 +15,8 @@
 
 - 752d371: chore: split tsconfig for intellisense, update tooling configs
 - Updated dependencies [752d371]
-    - @mannercode/nestlib-common@1.1.2
-    - @mannercode/nestlib-microservice@1.1.2
+    - @mannercode/nest-common@1.1.2
+    - @mannercode/nest-microservice@1.1.2
 
 ## 1.1.1
 
@@ -24,8 +24,8 @@
 
 - refactor: add TypeScript project references, update configs and formatting
 - Updated dependencies
-    - @mannercode/nestlib-common@1.1.1
-    - @mannercode/nestlib-microservice@1.1.1
+    - @mannercode/nest-common@1.1.1
+    - @mannercode/nest-microservice@1.1.1
 
 ## 1.1.0
 
@@ -36,8 +36,8 @@
 ### Patch Changes
 
 - Updated dependencies [7041703]
-    - @mannercode/nestlib-common@1.1.0
-    - @mannercode/nestlib-microservice@1.1.0
+    - @mannercode/nest-common@1.1.0
+    - @mannercode/nest-microservice@1.1.0
 
 ## 1.0.0
 
@@ -48,5 +48,5 @@
 ### Patch Changes
 
 - Updated dependencies [35deaa7]
-    - @mannercode/nestlib-common@1.0.0
-    - @mannercode/nestlib-microservice@1.0.0
+    - @mannercode/nest-common@1.0.0
+    - @mannercode/nest-microservice@1.0.0

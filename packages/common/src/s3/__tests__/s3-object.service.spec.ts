@@ -1,4 +1,4 @@
-import { toAny } from '@mannercode/nestlib-testing'
+import { toAny } from '@mannercode/nest-testing'
 import { HttpStatus } from '@nestjs/common'
 import type { S3ObjectServiceFixture } from './s3-object.service.fixture'
 import { HttpUtil } from '../../utils/http'

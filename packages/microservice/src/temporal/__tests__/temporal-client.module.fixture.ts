@@ -1,4 +1,4 @@
-import { createTestContext, getTemporalTestConnection } from '@mannercode/nestlib-testing'
+import { createTestContext, getTemporalTestConnection } from '@mannercode/nest-testing'
 import { Injectable } from '@nestjs/common'
 import { Client } from '@temporalio/client'
 import {

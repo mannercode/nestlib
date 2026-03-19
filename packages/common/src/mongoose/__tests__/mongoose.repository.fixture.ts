@@ -1,4 +1,4 @@
-import { createTestContext, getMongoTestConnection } from '@mannercode/nestlib-testing'
+import { createTestContext, getMongoTestConnection } from '@mannercode/nest-testing'
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common'
 import { InjectModel, MongooseModule, Prop, Schema } from '@nestjs/mongoose'
 import { Model } from 'mongoose'

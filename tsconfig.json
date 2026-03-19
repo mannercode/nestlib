@@ -3,9 +3,9 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@mannercode/nestlib-common": ["packages/common/src"],
-            "@mannercode/nestlib-microservice": ["packages/microservice/src"],
-            "@mannercode/nestlib-testing": ["packages/testing/src"]
+            "@mannercode/nest-common": ["packages/common/src"],
+            "@mannercode/nest-microservice": ["packages/microservice/src"],
+            "@mannercode/nest-testing": ["packages/testing/src"]
         }
     },
     "include": ["packages/**/*"]

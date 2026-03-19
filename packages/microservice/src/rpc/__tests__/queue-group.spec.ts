@@ -1,5 +1,5 @@
-import { sleep } from '@mannercode/nestlib-common'
-import { withTestId } from '@mannercode/nestlib-testing'
+import { sleep } from '@mannercode/nest-common'
+import { withTestId } from '@mannercode/nest-testing'
 import type { QueueGroupFixture } from './queue-group.fixture'
 
 describe('NATS Queue Group', () => {

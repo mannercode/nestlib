@@ -1,4 +1,4 @@
-import { Json } from '@mannercode/nestlib-common'
+import { Json } from '@mannercode/nest-common'
 import { DynamicModule, OnModuleDestroy } from '@nestjs/common'
 import { Global, HttpException, Inject, Injectable, Module } from '@nestjs/common'
 import { ClientProvider, ClientProxy } from '@nestjs/microservices'

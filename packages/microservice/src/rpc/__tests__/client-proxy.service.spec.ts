@@ -1,4 +1,4 @@
-import { withTestId } from '@mannercode/nestlib-testing'
+import { withTestId } from '@mannercode/nest-testing'
 import type { ClientProxyServiceFixture } from './client-proxy.service.fixture'
 
 describe('ClientProxyService', () => {

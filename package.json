@@ -1,5 +1,5 @@
 {
-    "name": "nestlib",
+    "name": "nest-libs",
     "private": true,
     "workspaces": [
         "packages/*"

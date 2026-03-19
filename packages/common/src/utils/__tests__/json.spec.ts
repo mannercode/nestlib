@@ -1,4 +1,4 @@
-import { nullDate } from '@mannercode/nestlib-testing'
+import { nullDate } from '@mannercode/nest-testing'
 import { Json } from '../json'
 
 describe('Json', () => {
