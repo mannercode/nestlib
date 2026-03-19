@@ -11,7 +11,7 @@ import { MicroserviceOptions, NatsOptions } from '@nestjs/microservices'
 import { MessagePattern, Payload, Transport } from '@nestjs/microservices'
 import { PaginationDto } from '..'
 
-export const maxLimitValue = 50
+export const maxSizeValue = 50
 
 export type PaginationFixture = {
     httpClient: HttpTestClient

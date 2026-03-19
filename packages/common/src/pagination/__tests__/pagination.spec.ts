@@ -18,16 +18,16 @@ describe('PaginationDto', () => {
         // 요청이 유효할 때
         describe('when the request is valid', () => {
             let page: number
-            let limit: number
+            let size: number
             let query: Record<string, any>
             let expectedResponse: Record<string, any>
 
             beforeEach(() => {
                 page = 2
-                limit = 3
-                query = { limit, orderby: 'name:asc', page }
+                size = 3
+                query = { size, orderby: 'name:asc', page }
                 expectedResponse = {
-                    response: { limit, orderby: { direction: 'asc', name: 'name' }, page }
+                    response: { size, orderby: { direction: 'asc', name: 'name' }, page }
                 }
             })
 
@@ -67,8 +67,8 @@ describe('PaginationDto', () => {
 
             beforeEach(() => {
                 const page = 2
-                const limit = 3
-                input = { limit, orderby: { direction: 'asc', name: 'name' }, page }
+                const size = 3
+                input = { size, orderby: { direction: 'asc', name: 'name' }, page }
             })
 
             // PaginationDto를 처리한다

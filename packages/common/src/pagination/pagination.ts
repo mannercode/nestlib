@@ -75,7 +75,7 @@ export class PaginationDto {
 
     @IsOptional()
     @IsPositive()
-    limit?: number
+    size?: number
 }
 
 export class PaginationResult<E> {
@@ -85,7 +85,7 @@ export class PaginationResult<E> {
     page: number
 
     @IsInt()
-    limit: number
+    size: number
 
     @IsInt()
     total: number

@@ -18,7 +18,7 @@ export class SampleDto {
     name: string
 }
 
-export const maxLimitValue = 50
+export const maxSizeValue = 50
 
 export type MongooseRepositoryFixture = {
     BadRequestException: typeof BadRequestException
@@ -30,7 +30,7 @@ export type MongooseRepositoryFixture = {
 @Injectable()
 class SamplesRepository extends MongooseRepository<Sample> {
     constructor(@InjectModel(Sample.name) readonly model: Model<Sample>) {
-        super(model, maxLimitValue)
+        super(model, maxSizeValue)
     }
 }
 

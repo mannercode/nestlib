@@ -15,7 +15,7 @@ const defaultLeanOptions = { virtuals: true }
 export abstract class MongooseRepository<Doc> implements OnModuleInit {
     constructor(
         protected readonly model: Model<Doc>,
-        protected readonly maxLimit: number
+        protected readonly maxSize: number
     ) {}
 
     async deleteById(id: string, session: SessionArg = undefined) {
@@ -66,19 +66,19 @@ export abstract class MongooseRepository<Doc> implements OnModuleInit {
     }) {
         const { configureQuery, pagination, session } = args
 
-        const limit = defaultTo(pagination.limit, this.maxLimit)
+        const size = defaultTo(pagination.size, this.maxSize)
         const page = defaultTo(pagination.page, 1)
 
-        if (limit <= 0) {
-            throw new BadRequestException(MongooseErrors.LimitInvalid(limit))
-        } else if (this.maxLimit < limit) {
-            throw new BadRequestException(MongooseErrors.MaxLimitExceeded(this.maxLimit, limit))
+        if (size <= 0) {
+            throw new BadRequestException(MongooseErrors.SizeInvalid(size))
+        } else if (this.maxSize < size) {
+            throw new BadRequestException(MongooseErrors.MaxSizeExceeded(this.maxSize, size))
         }
 
-        const skip = (page - 1) * limit
+        const skip = (page - 1) * size
 
         const queryHelper = this.model.find({}, null, { session })
-        queryHelper.limit(limit)
+        queryHelper.limit(size)
         queryHelper.skip(skip)
 
         if (pagination.orderby) {
@@ -97,7 +97,7 @@ export abstract class MongooseRepository<Doc> implements OnModuleInit {
             this.model.countDocuments(queryHelper.getQuery()).exec()
         ])
 
-        return { items, limit, page, total } as PaginationResult<Doc>
+        return { items, page, size, total } as PaginationResult<Doc>
     }
 
     async getById(id: string, session: SessionArg = undefined) {

@@ -8,20 +8,20 @@ export const MongooseErrors = {
         code: 'ERR_MONGOOSE_FILTERS_REQUIRED',
         message: 'At least one filter condition must be provided'
     }),
-    MaxLimitExceeded: (maxLimit: number, limit: number) => ({
-        code: 'ERR_MONGOOSE_MAX_LIMIT_EXCEEDED',
-        message: "The 'limit' parameter exceeds the maximum allowed value",
-        limit,
-        maxLimit
+    MaxSizeExceeded: (maxSize: number, size: number) => ({
+        code: 'ERR_MONGOOSE_MAX_SIZE_EXCEEDED',
+        message: "The 'size' parameter exceeds the maximum allowed value",
+        maxSize,
+        size
     }),
     MultipleDocumentsNotFound: (notFoundIds: string[]) => ({
         code: 'ERR_MONGOOSE_MULTIPLE_DOCUMENTS_NOT_FOUND',
         message: 'One or more documents not found',
         notFoundIds
     }),
-    LimitInvalid: (limit: number) => ({
-        code: 'ERR_MONGOOSE_LIMIT_INVALID',
-        message: 'limit must be a positive number',
-        limit
+    SizeInvalid: (size: number) => ({
+        code: 'ERR_MONGOOSE_SIZE_INVALID',
+        message: 'size must be a positive number',
+        size
     })
 }
