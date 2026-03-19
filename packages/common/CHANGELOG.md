@@ -1,5 +1,11 @@
 # @mannercode/nestlib-common
 
+## 1.2.0
+
+### Minor Changes
+
+- Rename pagination `limit` to `size` for semantic consistency with page-based pagination convention
+
 ## 1.1.3
 
 ### Patch Changes
