@@ -15,11 +15,11 @@
         "changeset:publish": "turbo run build && changeset publish"
     },
     "devDependencies": {
-        "@aws-sdk/client-s3": "^3.1012.0",
+        "@aws-sdk/client-s3": "^3.1014.0",
         "@changesets/cli": "^2.30.0",
         "@commitlint/cli": "^20.5.0",
         "@commitlint/config-conventional": "^20.5.0",
-        "eslint": "^10.0.3",
+        "eslint": "^10.1.0",
         "eslint-plugin-perfectionist": "^5.7.0",
         "eslint-plugin-unused-imports": "^4.4.1",
         "globals": "^17.4.0",
@@ -39,9 +39,9 @@
         "reflect-metadata": "^0.2.2",
         "testcontainers": "^11.13.0",
         "ts-jest": "^29.4.6",
-        "turbo": "^2.8.18",
+        "turbo": "^2.8.20",
         "typescript": "^5.9.3",
         "typescript-eslint": "^8.57.1"
     },
-    "packageManager": "npm@11.11.1"
+    "packageManager": "npm@11.12.0"
 }
